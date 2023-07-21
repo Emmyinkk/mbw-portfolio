@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="blur"></div>
+    <div class="sNav">
+        <div class="cancel">
+            <i class="ri-close-circle-line"></i>
+        </div>
+        <div class="list4">
+            <a href="#about">About Me</a>
+            <a href="#work">Gallery</a>
+            <!-- <a href="#contact">Contact</a> -->
+            <a href=""><i class="ri-instagram-fill"></i>Instagram</a> 
+            <a href=""><i class="ri-facebook-circle-fill"></i>Facebook</a> 
+            <a href=""><i class="ri-whatsapp-fill"></i>WhatsApp</a> 
+        </div>
+    </div>
+    <nav class="navbar-before-scroll" id="mainNav">
+        <div class="navbar">
+            <ul class="list1">
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#work">Gallery</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <p>MBW</p>
+            <ul class="list2">
+                <li><a href=""><i class="ri-instagram-line"></i></a></li>
+                <li><a href=""><i class="ri-facebook-box-line"></i></a></li>
+                <li><a href=""><i class="ri-twitter-line"></i></a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="hero">
+        <div class="image-mini_container">
+            <div class="colored">
+                <div class="image-container">
+                    <img src="assets/012.png" alt="image one" class="image1">
+                    <img src="assets/015.png" alt="image two" class="image2">
+                    <div class="myName">
+                        <p><span>MBW</span><br>Fashion<br>Addict</p>
+                        <button>Read More</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="floating">
+            <div class="floating-container">
+                <p>This is just a quote, nothing too special</p>
+            </div>
+            
+        </div>
+    </div>
+    <section class="section1">
+        <p class="fText">Recent work</p>
+        <div class="section1-container">
+            <div class="img-area">
+                <img src="assets/018.png" alt="image three">
+                <div class="texts">
+                    <p>The first</p>
+                </div>
+            </div>
+            <div class="img-area">
+                <img src="assets/017.png" alt="image four">
+                <div class="texts">
+                    <p>The second</p>
+                </div>
+            </div>
+            <div class="img-area">
+                <img src="assets/014.png" alt="image five">
+                <div class="texts">
+                    <p>The third</p>
+                </div>
+            </div>
+            <div class="img-area">
+                <img src="assets/014.png" alt="image five">
+                <div class="texts">
+                    <p>The third</p>
+                </div>
+            </div>
+        </div>
+        <div class="section1-btn">
+            <button>Explore More</button>
+        </div>
+        
+    </section>
+    <section class="section2" id="about">
+        <div class="section2-container">
+            <img src="assets/008.png" alt="">
+            <div class="heading-about">
+                <p>About Me</p>
+            </div>
+            <div class="main-text">
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nemo, totam. Voluptatem ipsam ullam itaque aspernatur error ex impedit harum fuga at deserunt.</p>
+                <button>Learn More</button>
+            </div>
+        </div>
+    </section>
+    <section class="section3">
+        <div class="section3-container">
+            <img src="assets/009.png" alt="">
+            <div class="heading-about2">
+                <p>Contact Me</p>
+            </div>
+            <div class="main-text2">
+                <div class="icon-links">  
+                    <a href=""><i class="ri-instagram-fill"></i></a> 
+                    <a href=""><i class="ri-facebook-circle-fill"></i></a> 
+                    <a href=""><i class="ri-whatsapp-fill"></i></a> 
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="footer-container">
+            <p>MBW</p>
+            <div class="allLinks">
+                <ul class="list3">
+                    <li><a href="#about">About Me</a></li>
+                    <li><a href="#work">Gallery</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="icon-links2">  
+                <a href=""><i class="ri-instagram-fill"></i></a> 
+                <a href=""><i class="ri-facebook-circle-fill"></i></a> 
+                <a href=""><i class="ri-whatsapp-fill"></i></a> 
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const navbar = document.getElementById("mainNav");
+
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 0) {
+                navbar.classList.add("navbar-after-scroll");
+            } else {
+                navbar.classList.remove("navbar-after-scroll");
+            }
+        })
+    </script>
+</body>
+</html>
