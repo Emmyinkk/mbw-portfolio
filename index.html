@@ -5,115 +5,887 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <!-- <link rel="stylesheet" href="style.css"> -->
     <title>Document</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montez&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Charmonman:wght@400;700&display=swap');
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .fixed {
+            position: fixed;
+        }
+
+        nav {
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 999;
+            padding: 1em 0;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 0 auto;
+            width: 90%;
+            text-align: left;
+        }
+
+        ul {
+            display: flex;
+            align-items: center;
+            padding: 0;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        li i {
+            font-size: 20px;
+            color: #483d8b;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        ul, p {
+            flex-grow: 1;
+            flex-basis: 0;
+        }
+
+        .logo img {
+            width: 150px;
+            height: 25px;
+            border-radius: 2px;
+        }
+
+        .navbar p {
+            text-align: center;
+            flex: 2;
+            color: #9932cc;
+            font-weight: 700;
+            font-family: 'Montez', cursive;
+        }
+
+        .list1{
+            font-size: 13px;
+            gap: 20px;
+            justify-content: left;
+        }
+
+        .list3 {
+            font-size: 13px;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .list2 {
+            justify-content: center;
+        }
+
+        .list1 a, .list3 a {
+            color: black;
+            font-weight: 500;
+            transition: all .2s ease;
+        }
+
+        .list1 a:hover {
+            color: rgb(153, 114, 177);
+            font-weight: 700;
+        }
+
+        .list2 {
+            justify-content: right;
+            gap: 10px;
+        }
+        .hero {
+            position: relative;
+        }
+        .image-mini_container {
+            width: 100%;
+            height: 400px;
+        }
+
+        .myName {
+            text-align: left;
+            font-size: 38px;
+            font-weight: 700;
+            line-height: 50px;
+        }
+
+        .myName p {
+            margin: 0;
+        }
+
+        .myName span {
+            font-family: 'Montez', cursive;
+            /* color: #9932cc; */
+            color: white;
+            font-size: 38px;
+            font-weight: 700;
+            
+        }
+        .section1, .section3 {
+            background: lavender;
+            padding: 150px 0em;
+        }
+
+        .image-container button {
+            border: none;
+            width: 70%;
+            padding: 1em;
+            color: white;
+            background: black;
+            cursor: pointer;
+        }
+
+        .floating {
+            position: absolute;
+            width: 100%;
+            bottom: -45px;
+            z-index: 20;
+        }
+        .floating-container {
+            background: white;
+            margin: 0 auto;
+            width: 70%;
+            max-width: 400px;
+            text-align: center;
+            font-family: 'Montez', cursive;
+            padding: 1em;
+        }
+
+        .section1-container {
+            display: grid;
+            column-gap: 10px;
+            row-gap: 10px;
+            width: 80%;
+            margin: 0 auto;
+            /* height: 450px; */
+        }
+
+        .img-area {
+            position: relative;
+            width: 100%;
+            transition: all .2s ease-in-out;
+        }
+
+        .remove {
+            display: none;
+        }
+
+        .add {
+            display: block;
+        }
+
+        .animate5 {
+            animation: slide-down 100ms ease ;
+        }
+
+        @keyframes slide-down {
+            from {
+                opacity: 0;
+                transform: translateY(-100px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0px);
+            }
+        }
+
+        .animate {
+            animation: slide-up 1200ms ease 500ms backwards;
+        }
+        @keyframes slide-up {
+            from {
+                opacity: 0;
+                transform: translateY(100px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0px);
+            }
+        }
+
+        .animate2 {
+            animation: slide-left 1200ms ease 500ms backwards;
+        }
+        @keyframes slide-left {
+            from {
+                opacity: 0;
+                transform: translateX(100px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0px);
+            }
+        }
+
+        .animate3 {
+            animation: slide-right 1200ms ease 500ms backwards;
+        }
+
+        @keyframes slide-right {
+            from {
+                opacity: 0;
+                transform: translateX(-100px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0px);
+            }
+        }
+
+        /* .fade-in {
+            transform: translateY(100px);
+        }
+
+        .fade-in {
+            opacity: 0;
+            transition: opacity 250ms ease-in, transform 500ms ease-in;
+        }
+
+        .fade-in.appear {
+            opacity: 1;
+            transform: translateY(0px);
+        }
+
+        .from-left {
+            transform: translateX(-50%);
+        }
+
+        .from-right {
+            transform: translateX(50%);
+        }
+
+        .from-left, .from-right {
+            transition: opacity 250ms ease-in, transform 350ms ease-in;
+            opacity: 0;
+        }
+
+        .from-left.appear, .from-right.appear {
+            transform: translateX(0);
+            opacity: 1;
+        } */
+
+        .img-area img{
+            width: 320px;
+            height: 380px;
+            object-fit: cover;
+            border: 10px solid white;
+        }
+
+        .texts{
+            position: absolute;
+            background: white;
+            width: 100%;
+            bottom: 10px;
+            text-align: center;
+        }
+
+        .fText {
+            text-align: center;
+            font-weight: 700;
+        }
+
+        .section1-btn {
+            text-align: center;
+            margin-top: 4em;
+        }
+
+        .section1-btn button {
+            border: none;
+            width: 70%;
+            max-width: 200px;
+            padding: 1em;
+            color: white;
+            background: black;
+            cursor: pointer;
+        }
+
+        .section2 {
+            background: white;
+            padding: 100px 0;
+        }
+
+        .section2-container, .section3-container {
+            width: 80%;
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+        }
+
+        .section2-container img, .section3-container img {
+            width: 100%;
+            max-width: 600px;
+            height: 500px;
+            object-fit: cover;
+            position: relative;
+        }
+
+
+
+        .heading-about p, .heading-about2 p {
+            position: relative;
+            font-weight: 700;
+            font-family: 'Charmonman', cursive;
+        }
+
+        .main-text, .main-text2 {
+            padding: 2em;
+            font-size: 12px;
+        }
+
+        .main-text button, .main-text2 button {
+            background: black;
+            color: white;
+            border: none;
+            width: 50%;
+            max-width: 100px;
+            padding: .5em;
+            margin-top: 1em;
+        }
+
+        .icon-links2 {
+            margin-top: 2em;
+        }
+
+        .icon-links a, .icon-links2 a {
+            color: black;
+        }
+
+        .icon-links a:hover, .icon-links2 a:hover {
+            color: rgb(173, 162, 180);
+        }
+
+        .icon-links i, .icon-links2 i {
+            font-size: 30px;
+            transition: .2s ease-in-out;
+        }
+
+        .icon-links i:hover, .icon-links2 i:hover {
+            font-size: 40px;
+        }
+
+        footer {
+            background: rgb(231, 212, 241);
+            padding: 70px 0px;
+            text-align: center;
+        }
+
+        footer p {
+            font-size: 40px;
+            font-family: 'Montez', cursive;
+            color: #9932cc;
+        }
+
+        .allLinks {
+            width: 50%;
+            max-width: 300px;
+            margin: 0 auto;
+        }
+
+        .navbar-before-scroll {
+            transition: background 0.5s ease-in-out, padding 0.5s ease-in-out;
+        }
+
+        .navbar-after-scroll {
+            background: black;
+            transition: background 0.5s ease-in-out, padding 0.5s ease-in-out;
+            padding: 1.2em 0em;
+        }
+
+        .navbar-after-scroll .list1 a, .navbar-after-scroll li i, .navbar-after-scroll .open-menu i {
+            color: white;
+        }
+
+        .blur {
+            position: fixed;
+            height: 100%;
+            width: 100%;
+            top: 0;
+            right: -100%;
+            transition: right .2s ease;
+            background: rgb(0, 0, 0,.9);
+            z-index: 9999999;
+        }
+
+        .above, .above2 {
+            position: fixed;
+            display: none;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 999999999;
+            width: 100%;
+        }
+
+        .flexed {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .cancel {
+            color: white;
+            background: #B451C9;
+            padding: .2em .55em;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        .middle-container {
+            width: 80%;
+            max-width: 500px;
+            margin: 0 auto;
+            /* height: 50%; */
+            padding: 1em;
+            text-align: justify;
+            font-size: 14px;
+            background: white;
+            border-radius: 12px;
+            transition: right .3s ease;
+        }
+
+        .enclosure{
+            height: 400px;
+            overflow-y: scroll;
+        }
+
+        .enclosure::-webkit-scrollbar {
+            display: none;
+        }
+
+        .enclosed {
+            padding: 1em;
+            background: #B451C9;
+            color: white;
+            border-radius: 12px;
+        }
+
+        .animate5 {
+            animation: slide-down 300ms ease 500ms backwards;
+        }
+
+        @keyframes slide-down {
+            from {
+                opacity: 0;
+                transform: translateX(-100px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0px);
+            }
+        }
+
+        .faded {
+            left: 50%;
+        }
+
+        .sNav {
+            position: fixed;
+            background: black;
+            right: -100%;
+            width: 60%;
+            height: 100%;
+            top: 0;
+            transition: right .4s ease;
+            z-index: 999999999999;
+        }
+
+        .open {
+            right: 0;
+        }
+
+        .cancel1 i {
+            color: white;
+            position: absolute;
+            right: 30px;
+            top: 40px;
+            font-size: 30px;
+        }
+
+        .list4 {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            row-gap: 30px;
+            padding-top: 70px;
+            padding-left: 45px;
+        }
+
+        .list4 i {
+            margin-right: .5em;
+            vertical-align: middle;
+        }
+
+        .list4 a{
+            color: white;
+        }
+
+        .open-menu i {
+            display: none;
+        }
+
+
+        @media only screen and (max-width: 767px) {
+            .list1, .list2 {
+                display: none;
+            }
+            .open-menu i {
+                display: block;
+                font-size: 20px;
+            }
+            .navbar p {
+                text-align: left;
+                flex: 9;
+            }
+            .hero {
+                background: url(assets/012.webp);
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+                height: 75vh;
+                margin-top: 3.5em;
+            }
+            .image1 {
+                width: 100%;
+                height: auto;
+                position: relative;
+                display: none;
+            }
+            .image2 {
+                display: none;
+            }
+            .myName {
+                position: absolute;
+                top: 20%;
+                left: 30px;
+                z-index: 4;
+            }
+            .image-container button {
+                width: 100%;
+            }
+            .section1-container {
+                grid-template-columns: repeat(1, 1fr);
+                row-gap: 30px;
+                text-align: center;
+            }
+            .heading-about {
+                position: absolute;
+                background: lavender;
+                padding: .2em 0em;
+                width: 50%;
+                max-width: 300px;
+                top: 0px;
+                right: 0%;
+            }
+            .heading-about2 {
+                position: absolute;
+                background: rgb(231, 212, 241);
+                padding: .2em 0em;
+                width: 50%;
+                max-width: 300px;
+                top: 0px;
+                left: 0%;
+            }
+            .main-text {
+                position: absolute;
+                background: white;
+                width: 100%;
+                font-size: 12px;
+                bottom: 0px;
+                text-align: left;
+            }
+            .main-text2 {
+                position: absolute;
+                background: lavender;
+                width: 50%;
+                font-size: 12px;
+                bottom: 0px;
+                right: 0;
+                text-align: left;
+            }
+
+            .icon-links {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                width: 100%;
+                text-align: center;
+            }
+        }
+
+        @media only screen and (min-width: 768px) {
+
+            .hero {
+                margin-top: 10em;
+                /* background: yellow; */
+                padding-bottom: 160px;
+            }
+            
+            .image1 {
+                position: relative;
+                width: 350px;
+                height: 500px;
+                object-fit: cover;
+                margin-top: -7%;
+                /* left: 50px;
+                z-index: 5; */
+                display: inline-block;
+                top: 0;
+                left: 0;
+                border: 10px solid white;
+            }
+            .image2 {
+                position: absolute;
+                width: 200px;
+                height: 250px;
+                object-fit: cover;
+                top: 15%;
+                left: -9%;
+                z-index: 7;
+                display: block;
+                border: 10px solid white;
+            }
+            .colored {
+                background: #B451C9;
+                width: 100%;
+                height: 400px;
+                top: 0;
+                left: 0;
+            }
+            .image-container {
+                position: relative;
+                display: flex;
+                gap: 30px;
+                align-items: center;
+                margin: 0 auto;
+                width: 80%;
+                max-width: 900px;
+            }
+            .myName {
+                margin-top: -10%;
+                font-size: 58px;
+            }
+            .section1-container {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            .heading-about {
+                position: absolute;
+                background: lavender;
+                padding: .2em 0em;
+                width: 30%;
+                max-width: 300px;
+                top: -40px;
+                right: -13%;
+            }
+
+            .heading-about2 {
+                position: absolute;
+                background: rgb(231, 212, 241);
+                padding: .2em 0em;
+                width: 30%;
+                max-width: 300px;
+                top: -40px;
+                left: -13%;
+            }
+
+            .main-text {
+                position: absolute;
+                background: white;
+                width: 70%;
+                bottom: 10px;
+                left: -13%;
+                text-align: left;
+                font-size: 12px;
+            }
+
+            .main-text2 {
+                position: absolute;
+                background: lavender;
+                width: 13%;
+                top: 30%;
+                right: 0%;
+                text-align: left;
+                height: 200px;
+            }
+
+            .icon-links {
+                display: grid;
+                grid-template-columns: repeat(1, 1fr);
+                row-gap: 2.4em;
+            }
+            
+        }
+    </style>
 </head>
 <body>
+    <div class="above">
+        <div class="middle-container animate5">
+            <div class="logo flexed">
+                <img src="assets/011.jpeg" alt="My logo">
+                <div class="cancel" onclick="cancel1()">X</div>
+            </div>
+            <p class="enclosed">MBW fashionaddict is a fashion brand that focuses majorly on 
+                female wears. Our aim is to empower every woman and help build 
+                confidences in themselves. We do this by creating collections
+                that embrace every type of body, makes statments and help you accept 
+                who you are. We aim to be your one stop shop for everything wears ranging
+                grom lounge wears, to dresses, formal, casual, bridal robes, aso ebi
+                and so much more.
+            </p>
+        </div>
+    </div>
+    <div class="above2">
+        
+        <div class="middle-container animate5">
+            <div class="logo flexed">
+                <img src="assets/011.jpeg" alt="My logo">
+                <div class="cancel" onclick="cancel()">X</div>
+            </div>
+            <div class="enclosure">
+                <p class="enclosed">I am Temiloluwa Esther Fagbemi, 27years old from Ondo state Nigeria. The first born or my family with two siblings. 
+                    I finished from the department of microbiology in Obafemi Awolowo University. I have always wanted to be a fashion designer but due to 
+                    the stereotype in Nigeria everyone has to go to uni to get a degree (there’s really no opportunity to study fashion in Uni) so I had to 
+                    go get a degree first like my parents wanted but bearing in mind they told me they’d support me if after I finish uni I still wanted 
+                    to do fashion. As soon as I was done, before going for nysc, I started learning how to paddle the machine, how to cut and sew using free hand 
+                    by a road side tailor, I did that for about 6 months. After my compulsory one year service, I decided to go to a proper fashion school and 
+                    I ended up in GMYT fashion academy in Lekki, Lagos state. Here’s where I learnt pattern cutting and more advance way of cutting and sewing 
+                    this was in the year 2020, had to end my program abruptly due to the coronavirus lockdown. By the time lockdown was over, in December 
+                    I started my own brand (this was when mbw, fashionaddict was born). I launched my first collection and it has been amazing from there. 
+                    In 2022 I started thinking of furthering my education and gaining more knowledge, this was when I decided to travel outside Nigeria and diversify 
+                    in my experience. I just finished my masters degree here at the Nottingham Trent University, Nottingham Uk I’m flying colors. My graduating collection 
+                    was selected as one of few students collection that was exhibited in London.
+                </p>
+            </div>
+        </div>
+    </div>
     <div class="blur"></div>
     <div class="sNav">
-        <div class="cancel">
+        <div class="cancel1" onclick="closeMenu()">
             <i class="ri-close-circle-line"></i>
         </div>
         <div class="list4">
-            <a href="#about">About Me</a>
-            <a href="#work">Gallery</a>
+            <a href="#about" onclick="closeMenu()">About Me</a>
+            <a href="#gallery" onclick="closeMenu()">Gallery</a>
             <!-- <a href="#contact">Contact</a> -->
-            <a href=""><i class="ri-instagram-fill"></i>Instagram</a> 
+            <a href="https://instagram.com/mbw_fashionaddict?igshid=OGQ5ZDc2ODk2ZA=="><i class="ri-instagram-fill"></i>Instagram</a> 
             <a href=""><i class="ri-facebook-circle-fill"></i>Facebook</a> 
-            <a href=""><i class="ri-whatsapp-fill"></i>WhatsApp</a> 
+            <a href="https://wa.me/message/CWEN3URRZTOIL1?src=qr"><i class="ri-whatsapp-fill"></i>WhatsApp</a> 
         </div>
     </div>
     <nav class="navbar-before-scroll" id="mainNav">
         <div class="navbar">
             <ul class="list1">
                 <li><a href="#about">About Me</a></li>
-                <li><a href="#work">Gallery</a></li>
+                <li><a href="#gallery">Gallery</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
-            <p>MBW</p>
+            <div class="logo">
+                <img src="assets/011.jpeg" alt="My logo">
+            </div>
             <ul class="list2">
-                <li><a href=""><i class="ri-instagram-line"></i></a></li>
+                <li><a href="https://instagram.com/mbw_fashionaddict?igshid=OGQ5ZDc2ODk2ZA=="><i class="ri-instagram-line"></i></a></li>
                 <li><a href=""><i class="ri-facebook-box-line"></i></a></li>
-                <li><a href=""><i class="ri-twitter-line"></i></a></li>
+                <li><a href="https://wa.me/message/CWEN3URRZTOIL1?src=qr"><i class="ri-whatsapp-line"></i></a></li>
             </ul>
+            <div class="open-menu" onclick="openMenu()">
+                <i class="ri-menu-3-line"></i>
+            </div>
         </div>
     </nav>
     <div class="hero">
         <div class="image-mini_container">
             <div class="colored">
                 <div class="image-container">
-                    <img src="assets/012.png" alt="image one" class="image1">
-                    <img src="assets/015.png" alt="image two" class="image2">
-                    <div class="myName">
+                    <img src="assets/012.webp" alt="image one" class="image1 animate">
+                    <img src="assets/015.webp" alt="image two" class="image2 animate3">
+                    <div class="myName animate2">
                         <p><span>MBW</span><br>Fashion<br>Addict</p>
-                        <button>Read More</button>
+                        <button onclick="about()">Read More</button>
                     </div>
                 </div>
             </div>
         </div>
         <div class="floating">
             <div class="floating-container">
-                <p>This is just a quote, nothing too special</p>
+                <p>One stop shop for everything fashion</p>
             </div>
             
         </div>
     </div>
-    <section class="section1">
+    <section class="section1" id="gallery">
         <p class="fText">Recent work</p>
-        <div class="section1-container">
+        <div class="section1-container fade-in">
             <div class="img-area">
-                <img src="assets/018.png" alt="image three">
-                <div class="texts">
-                    <p>The first</p>
-                </div>
+               
+                <img src="assets/018.webp" alt="image three">
+                
             </div>
             <div class="img-area">
-                <img src="assets/017.png" alt="image four">
-                <div class="texts">
-                    <p>The second</p>
-                </div>
+               
+                <img src="assets/017.webp" alt="image four">
+                
             </div>
             <div class="img-area">
-                <img src="assets/014.png" alt="image five">
-                <div class="texts">
-                    <p>The third</p>
-                </div>
-            </div>
-            <div class="img-area">
-                <img src="assets/014.png" alt="image five">
-                <div class="texts">
-                    <p>The third</p>
-                </div>
+                <img src="assets/014.webp" alt="image five">
+                
             </div>
         </div>
         <div class="section1-btn">
-            <button>Explore More</button>
+            <a href="gallery.html"><button>Explore More</button></a>
         </div>
         
     </section>
     <section class="section2" id="about">
         <div class="section2-container">
-            <img src="assets/008.png" alt="">
-            <div class="heading-about">
+
+            <img src="assets/008.webp" alt="image" class="fade-in">
+            <div class="heading-about slide-in from-right">
                 <p>About Me</p>
             </div>
-            <div class="main-text">
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nemo, totam. Voluptatem ipsam ullam itaque aspernatur error ex impedit harum fuga at deserunt.</p>
-                <button>Learn More</button>
+            <div class="main-text slide-in from-left">
+                <p>I am Temiloluwa Fagbemi, a 27-year-old from Nigeria with a degree in microbiology. Despite my passion for fashion designing, 
+                    I was persuaded to get a degree as societal norms in Nigeria prioritize higher education, with believes that I would be supported 
+                    by my parents to pursue fashion after completing University. 
+                </p>
+                <button onclick="fullStory()">Learn More</button>
             </div>
         </div>
     </section>
     <section class="section3">
         <div class="section3-container">
-            <img src="assets/009.png" alt="">
-            <div class="heading-about2">
+            <img src="assets/007.JPEG" alt="image" class="fade-in">
+            <div class="heading-about2 slide-in from-left">
                 <p>Contact Me</p>
             </div>
-            <div class="main-text2">
+            <div class="main-text2 slide-in from-right">
                 <div class="icon-links">  
-                    <a href=""><i class="ri-instagram-fill"></i></a> 
+                    <a href="https://instagram.com/mbw_fashionaddict?igshid=OGQ5ZDc2ODk2ZA=="><i class="ri-instagram-fill"></i></a> 
                     <a href=""><i class="ri-facebook-circle-fill"></i></a> 
-                    <a href=""><i class="ri-whatsapp-fill"></i></a> 
+                    <a href="https://wa.me/message/CWEN3URRZTOIL1?src=qr"><i class="ri-whatsapp-fill"></i></a> 
                 </div>
             </div>
         </div>
@@ -124,19 +896,35 @@
             <div class="allLinks">
                 <ul class="list3">
                     <li><a href="#about">About Me</a></li>
-                    <li><a href="#work">Gallery</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </div>
             <div class="icon-links2">  
-                <a href=""><i class="ri-instagram-fill"></i></a> 
+                <a href="https://instagram.com/mbw_fashionaddict?igshid=OGQ5ZDc2ODk2ZA=="><i class="ri-instagram-fill"></i></a> 
                 <a href=""><i class="ri-facebook-circle-fill"></i></a> 
-                <a href=""><i class="ri-whatsapp-fill"></i></a> 
+                <a href="https://wa.me/message/CWEN3URRZTOIL1?src=qr"><i class="ri-whatsapp-fill"></i></a> 
             </div>
         </div>
     </footer>
-
+</body>
+    <!-- <script src="node_modules/lazysizes/lazysizes.min.js" async></script> -->
     <script>
+         function openn() {
+            document.querySelector(".remove").classList.add("add")
+        }
+
+        function openMenu() {
+            document.querySelector(".blur").classList.add("open");
+            document.querySelector(".sNav").classList.add("open");
+        }
+
+        function closeMenu() {
+            document.querySelector(".blur").classList.remove("open");
+            document.querySelector(".sNav").classList.remove("open");
+        }
+
+
         const navbar = document.getElementById("mainNav");
 
         window.addEventListener('scroll', function() {
@@ -145,7 +933,60 @@
             } else {
                 navbar.classList.remove("navbar-after-scroll");
             }
-        })
+        });
+
+        function about() {
+            document.querySelector(".blur").classList.add("open");
+            document.querySelector(".above").style.display = "block";
+        }
+
+        function cancel1() {
+            document.querySelector(".blur").classList.remove("open");
+            document.querySelector(".above").style.display = "none";
+        }
+
+        function fullStory() {
+            document.querySelector(".blur").classList.add("open");
+            document.querySelector(".above2").style.display = "block";
+        }
+
+        function cancel() {
+            document.querySelector(".blur").classList.remove("open");
+            document.querySelector(".above2").style.display = "none";
+        }
+
+
+        // const faders = document.querySelectorAll(".fade-in");
+        // const sliders = document.querySelectorAll(".slide-in");
+
+        // const appearOptions = {
+        //     threshold: 0,
+        //     rootMargin: "0px 0px -100px 0px"
+        // };
+
+        // const appearOnScroll = new IntersectionObserver(function(
+        //     entries, 
+        //     appearOnScroll
+        // ) {
+        //     entries.forEach(entry => {
+        //         if(!entry.isIntersecting) {
+        //             return;
+        //         } else {
+        //             entry.target.classList.add("appear");
+        //             appearOnScroll.unobserve(entry.target)
+        //         }
+        //     })
+        //   }, 
+        //   appearOptions);
+
+
+        //   faders.forEach(fader => {
+        //     appearOnScroll.observe(fader);
+        //   });
+
+        //   sliders.forEach(slider => {
+        //     appearOnScroll.observe(slider);
+        //   })
     </script>
 </body>
 </html>

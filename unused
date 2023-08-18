@@ -1,0 +1,67 @@
+        <div class="remove">
+            <div class="section1-container animate5">
+                <div class="img-area">
+                    <!-- <img data-src="assets/021.webp" alt="image six" class="lazyload"> -->
+                    <img src="assets/021.webp" alt="image six">
+                    <!-- <div class="texts">
+                        <p>The third</p>
+                    </div> -->
+                </div>
+                <div class="img-area">
+                    <!-- <img data-src="assets/020.webp" alt="image seven" class="lazyload"> -->
+                    <img src="assets/020.webp" alt="image five">
+                    <!-- <div class="texts">
+                        <p>The third</p>
+                    </div> -->
+                </div>
+                <div class="img-area">
+                    <!-- <img data-src="assets/024.jpg" alt="image eight" class="lazyload"> -->
+                    <img src="assets/024.jpg" alt="image five">
+                    <!-- <div class="texts">
+                        <p>The third</p>
+                    </div> -->
+                </div>
+                <div class="img-area">
+                    <!-- <img data-src="assets/013.webp" alt="image nine" class="lazyload"> -->
+                    <img src="assets/013.webp" alt="image five">
+                    <!-- <div class="texts">
+                        <p>The third</p>
+                    </div> -->
+                </div>
+                <div class="img-area">
+                    <!-- <img data-src="assets/019.webp" alt="image ten" class="lazyload"> -->
+                    <img src="assets/019.webp" alt="image five">
+                    <!-- <div class="texts">
+                        <p>The third</p>
+                    </div> -->
+                </div>
+                <div class="img-area">
+                    <!-- <img data-src="assets/022.JPG" alt="image eleven" class="lazyload"> -->
+                    <img src="assets/022.JPG" alt="image eleven">
+                    <!-- <div class="texts">
+                        <p>The third</p>
+                    </div> -->
+                </div>
+                <div class="img-area">
+                    <!-- <img data-src="assets/012.webp" alt="image twelve" class="lazyload"> -->
+                    <img src="assets/012.webp" alt="image twelve">
+                    <!-- <div class="texts">
+                        <p>The third</p>
+                    </div> -->
+                </div>
+                <div class="img-area">
+                    <!-- <img data-src="assets/015.webp" alt="image thirteen" class="lazyload"> -->
+                    <img src="assets/015.webp" alt="image thirteen">
+                    <!-- <div class="texts">
+                        <p>The third</p>
+                    </div> -->
+                </div>
+                <div class="img-area">
+                    <!-- <img data-src="assets/023.JPG" alt="image six" class="lazyload"> -->
+                    <img src="assets/023.JPG" alt="image fourteen">
+                    <!-- <div class="texts">
+                        <p>The third</p>
+                    </div> -->
+                </div>
+            </div>
+        </div>
